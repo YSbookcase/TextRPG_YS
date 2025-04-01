@@ -12,8 +12,8 @@ namespace TextRPG_YS.utility
         public static void Print(string context = "문자열을 입력해 주세요.", ConsoleColor textColor = ConsoleColor.White, int delay = 0)
         {
             Console.ForegroundColor = textColor;
-            Console.WriteLine(context);
             Thread.Sleep(delay);
+            Console.WriteLine(context);
             Console.ResetColor();
 
 
