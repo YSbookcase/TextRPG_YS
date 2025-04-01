@@ -19,6 +19,14 @@ namespace TextRPG_YS.Scenes
         {
             switch(input)
             {
+                case ConsoleKey.D1:
+                    Game.ChangeScene("HomeScene");
+                    break;
+
+                case ConsoleKey.D2:
+                    //TOGO : 불러오기 구현 필요.
+                    break;
+
                 case ConsoleKey.D3:
                     Game.GameOver("게임을 종료합니다.");
                     break;
@@ -35,13 +43,13 @@ namespace TextRPG_YS.Scenes
 
         public override void Result()
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void wait()
         {
             Console.WriteLine("계속하려면 아무키나 입력하세요.");
-            Console.ReadKey();
+            Console.ReadKey(true);
         }
     }
 }
