@@ -17,12 +17,20 @@ namespace TextRPG_YS.Scenes
 
         public override void Next()
         {
-            throw new NotImplementedException();
+            switch(input)
+            {
+                case ConsoleKey.D3:
+                    Game.GameOver("게임을 종료합니다.");
+                    break;
+
+            }
         }
 
         public override void Render()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("############################");
+            Console.WriteLine("#        YS의 모험         #");
+            Console.WriteLine("############################");
         }
 
         public override void Result()
@@ -32,7 +40,8 @@ namespace TextRPG_YS.Scenes
 
         public override void wait()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("계속하려면 아무키나 입력하세요.");
+            Console.ReadKey();
         }
     }
 }

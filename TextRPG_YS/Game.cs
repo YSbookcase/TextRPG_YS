@@ -22,13 +22,22 @@ namespace TextRPG_YS
         {
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("TitleScene", new TitleScene());
-
+            sceneDic.Add("HomeScene", new HomeScene());
 
             curScene = sceneDic["TitleScene"];
-
+           
 
 
         }
+
+
+        public static void ChangeScene(string sceneName)
+        {
+            curScene = sceneDic[sceneName];
+
+        }
+
+
 
         public static void Run()
         {
@@ -41,6 +50,10 @@ namespace TextRPG_YS
                 Console.WriteLine();
                 curScene.Choice();
                 curScene.Input();
+                curScene.Result();
+                Console.WriteLine();
+                curScene.wait();
+                curScene.Next();
 
 
             }
@@ -50,7 +63,7 @@ namespace TextRPG_YS
 
 
 
-        public static void GameOver(string gameoverCommet)
+        public static void GameOver(string gameoverCommet="")
         {
             Console.Clear();
             Console.WriteLine(gameoverCommet);
