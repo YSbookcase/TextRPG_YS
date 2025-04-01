@@ -17,13 +17,18 @@ namespace TextRPG_YS.Scenes
 
         public override void Next()
         {
-            throw new NotImplementedException();
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Game.ChangeScene("HomeBackScene");
+                    break;
+            }
         }
 
         public override void Render()
         {
             Console.WriteLine("이상하게도 불빛이 없는 한치 앞도 보이지 않는 어둠이다.");
-            WordEffect.Print("내가 알고 있는 장소가 아닌것 같다.", ConsoleColor.Red, 5000);
+            WordEffect.Print("내가 알고 있는 장소가 아닌것 같다.", ConsoleColor.Red, 3000);
 
         }
 
@@ -31,12 +36,10 @@ namespace TextRPG_YS.Scenes
         {
             switch(input)
             {
-                case ConsoleKey.D1:
-                    Game.ChangeScene("Homescene");
-                    break;
+                
 
                 case ConsoleKey.D2:
-                    Game.GameOver("갑작스러운 어둠이 덥쳤다. 순간의 정적지 찾아온다.");
+                    Game.GameOver("갑작스러운 어둠이 덥쳤다. 순간의 정적이 찾아온다.");
                     break;
 
             }
@@ -44,7 +47,9 @@ namespace TextRPG_YS.Scenes
 
         public override void wait()
         {
-            throw new NotImplementedException();
+            Console.WriteLine();
+            Console.WriteLine("선택 후 진행하기 위해 아무키나 눌러주세요.");
+            Console.ReadKey(true);
         }
     }
 }

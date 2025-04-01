@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_YS.utility;
-using TextRPG_YS;
 
 namespace TextRPG_YS.Scenes
 {
-    class HomeScene : Scene
+    public class HomeBackScene : Scene
     {
         public override void Choice()
         {
@@ -26,26 +25,14 @@ namespace TextRPG_YS.Scenes
                     break;
                 case ConsoleKey.D3:
                     Console.WriteLine();
-                    Console.WriteLine("천천히 문앞으로 이동해 문을 열었다.");
-                    Game.ChangeScene("OutsideScene");
+                    Game.ChangeScene("천천히 문앞으로 이동해 문을 열었다.");
                     break;
             }
-            
         }
 
         public override void Render()
         {
-           
-            WordEffect.Print("주말을 맞아.", ConsoleColor.White);
-            WordEffect.Print("늦잠을 자고 일어났다.", ConsoleColor.White,1000);
-            WordEffect.Print("문득 깨달았을 때는 어둠이 깔린 밤이였다.",ConsoleColor.White,2000);
-            Console.WriteLine();
-            WordEffect.Print("키를 눌러 다음으로", ConsoleColor.White, 2000); 
-            Console.ReadKey(true);
-            Console.Clear();
-            Console.WriteLine("평소보다 밖은 어두었고 숲속에 있는 느낌이다.");
-            WordEffect.Print("방문 밖이 평소와는 다른 분위기다.", ConsoleColor.White, 3000);
-            WordEffect.Print("", ConsoleColor.White, 1000);
+            WordEffect.Print("다시 돌아왔다 무엇을 할까?", ConsoleColor.White, 1000);
         }
 
         public override void Result()
@@ -55,7 +42,7 @@ namespace TextRPG_YS.Scenes
                 case ConsoleKey.D2:
                     Item item = ItemDatabase.GetItemById(1);
 
-                    if (Game.firstPlayer != null && item != null && !Game.firstPlayer.Inventory.HasItem(item.Id))
+                    if (Game.firstPlayer == null || item == null || !Game.firstPlayer.Inventory.HasItem(item.Id))
                     {
                         Console.WriteLine("스마트폰을 챙겼다.");
                         Game.firstPlayer.Inventory.AddItem(item);
@@ -73,7 +60,6 @@ namespace TextRPG_YS.Scenes
             Console.WriteLine();
             Console.WriteLine("선택 후 진행하기 위해 아무키나 눌러주세요.");
             Console.ReadKey(true);
-
         }
     }
 }
