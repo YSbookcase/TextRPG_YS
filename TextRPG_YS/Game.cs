@@ -39,8 +39,15 @@ namespace TextRPG_YS
 
         public static void ChangeScene(string sceneName)
         {
-            curScene = sceneDic[sceneName];
+            if (!sceneDic.ContainsKey(sceneName))
+            {
+                Console.WriteLine($"씬 '{sceneName}'이 등록되지 않았습니다.");
+                return;
+            }
 
+            curScene = sceneDic[sceneName];
+            // 바로 출력하고 싶으면 여기에 실행 흐름 넣기
+            // 그렇지 않으면 Run() 루프에서 반영됨
         }
 
 
@@ -66,6 +73,17 @@ namespace TextRPG_YS
 
 
         }
+
+        public static void GoToTiltle(string goComment)
+            {
+            Console.Clear();
+            Console.WriteLine();
+            Console.WriteLine(goComment);
+          
+
+
+                
+                }
 
 
 

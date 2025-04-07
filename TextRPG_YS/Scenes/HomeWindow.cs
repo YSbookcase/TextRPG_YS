@@ -39,7 +39,8 @@ namespace TextRPG_YS.Scenes
                 
 
                 case ConsoleKey.D2:
-                    Game.GameOver("갑작스러운 어둠이 덥쳤다. 순간의 정적이 찾아온다.");
+                    Game.GoToTiltle("갑작스러운 어둠이 덥쳤다. 순간의 정적이 찾아온다.");
+                    Game.ChangeScene("TitleScene");
                     break;
 
             }
