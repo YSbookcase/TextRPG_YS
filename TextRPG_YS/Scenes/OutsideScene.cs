@@ -7,7 +7,7 @@ using TextRPG_YS.utility;
 
 namespace TextRPG_YS.Scenes
 {
-    class OutsideScene : Scene
+    public class OutsideScene : Scene
     {
         public override void Choice()
         {
@@ -17,7 +17,13 @@ namespace TextRPG_YS.Scenes
 
         public override void Next()
         {
-            throw new NotImplementedException();
+            switch (input)
+            {
+                case ConsoleKey.D2:
+                    Game.ChangeScene("HomeBackScene");
+                    break;
+
+            }
         }
 
         public override void Render()
@@ -27,12 +33,18 @@ namespace TextRPG_YS.Scenes
 
         public override void Result()
         {
-            throw new NotImplementedException();
+            switch (input)
+            {
+                case ConsoleKey.D2:
+                    Game.ChangeScene("HomeBackScene");
+                    break;
+                
+            }
         }
 
         public override void wait()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

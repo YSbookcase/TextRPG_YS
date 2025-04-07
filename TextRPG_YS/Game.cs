@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 using TextRPG_YS.Scenes;
+using TextRPG_YS.utility;
 
 namespace TextRPG_YS
 {
@@ -78,7 +79,9 @@ namespace TextRPG_YS
             {
             Console.Clear();
             Console.WriteLine();
-            Console.WriteLine(goComment);
+            WordEffect.Print(goComment, ConsoleColor.Red, 0);
+            Game.ChangeScene("TitleScene");
+            
           
 
 

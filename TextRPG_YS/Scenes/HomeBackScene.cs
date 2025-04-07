@@ -25,7 +25,7 @@ namespace TextRPG_YS.Scenes
                     break;
                 case ConsoleKey.D3:
                     Console.WriteLine();
-                    Game.ChangeScene("천천히 문앞으로 이동해 문을 열었다.");
+                    Game.ChangeScene("OutsideScene");
                     break;
             }
         }

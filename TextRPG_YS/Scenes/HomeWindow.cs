@@ -7,7 +7,7 @@ using TextRPG_YS.utility;
 
 namespace TextRPG_YS.Scenes
 {
-    class HomeWindow : Scene
+    public class HomeWindow : Scene
     {
         public override void Choice()
         {
@@ -17,12 +17,7 @@ namespace TextRPG_YS.Scenes
 
         public override void Next()
         {
-            switch (input)
-            {
-                case ConsoleKey.D1:
-                    Game.ChangeScene("HomeBackScene");
-                    break;
-            }
+            
         }
 
         public override void Render()
@@ -34,15 +29,14 @@ namespace TextRPG_YS.Scenes
 
         public override void Result()
         {
-            switch(input)
+            switch (input)
             {
-                
-
+                case ConsoleKey.D1:
+                    Game.ChangeScene("HomeBackScene");
+                    break;
                 case ConsoleKey.D2:
                     Game.GoToTiltle("갑작스러운 어둠이 덥쳤다. 순간의 정적이 찾아온다.");
-                    Game.ChangeScene("TitleScene");
                     break;
-
             }
         }
 

@@ -8,7 +8,7 @@ using TextRPG_YS;
 
 namespace TextRPG_YS.Scenes
 {
-    class HomeScene : Scene
+    public class HomeScene : Scene
     {
         public override void Choice()
         {
